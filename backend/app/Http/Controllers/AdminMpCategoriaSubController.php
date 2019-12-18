@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminMpCategoriaController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminMpCategoriaSubController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,28 +25,31 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "mp_categoria";
+			$this->table = "mp_categoria_sub";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
+			$this->col[] = ["label"=>"Categoria","name"=>"id_categoria","join"=>"mp_categoria,id"];
 			$this->col[] = ["label"=>"Nombre","name"=>"nombre"];
-			//$this->col[] = ["label"=>"Imagen","name"=>"imagen","image"=>true];
-			$this->col[] = ["label"=>"Estado","name"=>"estado"];
+			$this->col[] = ["label"=>"Imagen","name"=>"imagen","image"=>true];
+			$this->col[] = ["label"=>"Is Destacada","name"=>"is_destacada"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
+			$this->form[] = ['label'=>'Categoría','name'=>'id_categoria','type'=>'datamodal','validation'=>'required|integer|min:0','width'=>'col-sm-10','datamodal_table'=>'mp_categoria','datamodal_columns'=>'nombre','datamodal_size'=>'small'];
 			$this->form[] = ['label'=>'Nombre','name'=>'nombre','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Imagen','name'=>'imagen','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select2','validation'=>'required','width'=>'col-sm-10','dataenum'=>'A|Activa;I|Inactiva'];
+			$this->form[] = ['label'=>'Imagen','name'=>'imagen','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Is Destacada','name'=>'is_destacada','type'=>'select2','validation'=>'required','width'=>'col-sm-10','dataenum'=>'S|Si;N|No'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
+			//$this->form[] = ["label"=>"Categoria","name"=>"id_categoria","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"categoria,id"];
 			//$this->form[] = ["label"=>"Nombre","name"=>"nombre","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			//$this->form[] = ["label"=>"Imagen","name"=>"imagen","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Estado","name"=>"estado","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Is Destacada","name"=>"is_destacada","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
 			# OLD END FORM
 
 			/* 
