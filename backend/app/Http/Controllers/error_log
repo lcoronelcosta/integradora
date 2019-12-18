@@ -1,0 +1,1 @@
+[04-May-2019 12:42:11 UTC] PHP Fatal error:  Class 'crocodicstudio\crudbooster\controllers\CBController' not found in /home/hierrodi/public_html/prueba/app/Http/Controllers/AdminCmsUsersController.php on line 8
