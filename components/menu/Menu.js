@@ -9,15 +9,20 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="xl">
-        <NavbarBrand href="/" className="mr-auto">Mi Pedido</NavbarBrand>
+        <NavbarBrand href="/" className="mr-auto">Mi Pedido - Categorias</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="GetSubcategorias.js">Components</NavLink>
+              <Nav navbar>
+                <NavItem>
+                  <NavLink href="GetSubcategorias.js">Cerrajeria</NavLink>
+                </NavItem>
+              </Nav>
+              
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="https://github.com/reactstrap/reactstrap">Electricidad</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
