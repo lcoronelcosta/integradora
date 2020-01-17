@@ -2,10 +2,10 @@ import React from 'react';
 import { FlatList, ActivityIndicator, Text, View, ScrollView  } from 'react-native';
 import { Card, ListItem, Button, List, SearchBar, Header } from 'react-native-elements';
 
-export default class Home extends React.Component {
+export default class Subcategorias extends React.Component {
 
     static navigationOptions = {
-      title: 'Home',
+      title: 'Subcategorias',
       headerStyle: {
         backgroundColor: '#f4511e',
       },
@@ -22,7 +22,11 @@ export default class Home extends React.Component {
     }
 
     componentDidMount(){
-        return fetch('http://hierrodiseno.com/mipedido/public/api/getcategorias')
+        const item = this.props.navigation.state.params;
+        
+        //return fetch(`http://hierrodiseno.com/mipedido/public/api/getsubcategorias/?id_categoria=${item}`);
+        return fetch('http://hierrodiseno.com/mipedido/public/api/getsubcategorias')
+
           .then((response) => response.json())
           .then((responseJson) => {
 
@@ -74,6 +78,6 @@ export default class Home extends React.Component {
     }
 
     handleItemClick = (item) => {
-        this.props.navigation.navigate('Subcategorias', item.id);
+        this.props.navigation.navigate('Details', item);
     }
 }
