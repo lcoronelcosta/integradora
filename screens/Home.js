@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList, ActivityIndicator, Text, View, ScrollView  } from 'react-native';
 import { Card, ListItem, Button, List, SearchBar, Header } from 'react-native-elements';
+//import Banners from '../components/Banners';
 
 export default class Home extends React.Component {
 
